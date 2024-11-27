@@ -60,7 +60,7 @@ export default function FreelancerDashboard() {
                                                 Total Revenues
                                             </div>
                                             <div className="body-stat">
-                                                {data?.dashboard?.revenues} $
+                                                {data?.dashboard?.revenues} ₹
                                             </div>
                                         </div>
                                         <div className="logo">
