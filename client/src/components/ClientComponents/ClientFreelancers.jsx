@@ -82,9 +82,18 @@ export default function ClientServices() {
                   <Slider images={service.images.split('|')} />
                 </div>
                 <div className="serviceHeader">
-                  <img src={service.userInfo.image === 'no-image.png' ? noImage : `http://localhost:3001/ProfilePic/${service.userInfo.image}`} alt="Profile Picture" />
-                  <span>{service.userInfo.username}</span>
-                </div>
+  <img 
+    src={
+      service.userInfo && service.userInfo.image === 'no-image.png' 
+      ? noImage 
+      : service.userInfo && service.userInfo.image 
+        ? `http://localhost:3001/ProfilePic/${service.userInfo.image}` 
+        : noImage
+    } 
+    alt="Profile Picture" 
+  />
+  <span>{service.userInfo ? service.userInfo.username : 'Unknown User'}</span>
+</div>
                 <div className="serviceBody">
                   <p className="serviceTitle">
                     {service.title.length > 19 ? `${service.title.slice(0, 19)}...` : service.title}
